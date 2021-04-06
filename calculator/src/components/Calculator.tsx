@@ -1,34 +1,24 @@
 import './Calculator.css';
-import Button from './Button';
+import Buttons from './Buttons';
 import ResultScreen from './ResultScreen';
+import { useState } from 'react';
 
 function Calculator() {
+    let [result, setResult] = useState(0);
+    function handleClick(e: MouseEvent) {
+        e.preventDefault();
+        // alert(event.currentTarget.tagName);
+        console.log(e.target)
+        return;
+    }
 
     return (
         <div className='container'>
             <ResultScreen />
-            <div className='grid'>
-                {buttons.map(row => {
-                    return row.map(cell => {
-                        return (
-                            <div key={cell}>
-                                <Button label={cell} />
-                            </div>
-                        );
-                    })
-                })}
-            </div>
-
+            <Buttons />
         </div>
     );
 }
 
 export default Calculator;
 
-const buttons = [
-    ['C', '+/-', '%', '÷'],
-    ['7', '8', '9', 'x'],
-    ['4', '5', '6', '-'],
-    ['1', '2', '3', '+'],
-    ['0', '.', '=']
-];
