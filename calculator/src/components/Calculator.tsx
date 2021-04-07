@@ -1,7 +1,18 @@
-import './Calculator.css';
+
+import styled from 'styled-components';
 import Buttons from './Buttons';
 import ResultScreen from './ResultScreen';
 import { useState } from 'react';
+
+const Display = styled.div`
+    border: solid black;
+    padding: 10%;
+    border-radius: 15px;
+    color: black;
+    font-size: xxx-large;
+    text-align: right;
+
+`;
 
 function Calculator() {
     let [result, setResult] = useState(0);
@@ -14,7 +25,7 @@ function Calculator() {
 
     return (
         <div className='container'>
-            <ResultScreen />
+            <Display>{result}</Display>
             <Buttons />
         </div>
     );

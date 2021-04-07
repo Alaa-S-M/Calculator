@@ -1,4 +1,3 @@
-import './ResultScreen.css';
 
 function ResultScreen() {
     return (

@@ -6,24 +6,21 @@
 
 .container{
   text-align: center;
-  padding: 5%;  
-  padding-top: 20vh;
+  width: fit-content;
+  margin: auto;
+  margin-top: 20vh;
 }
 
 /* Buttons CSS */
 
 .grid{
   width: fit-content;
-  margin: auto;
-  text-align: center;
   display: grid;
   grid-template-columns: repeat(4, 80px);
   grid-template-rows: repeat(5, 80px);
   border: solid black;
   background-color: rgba(0,0,0,255);
-  border-bottom-left-radius: 15px;
-  border-bottom-right-radius: 15px;
-  /* grid-gap: 5px; */
+  border-radius: 15px;
 }
 .grid-item{
   border-radius: 50%;
@@ -59,4 +56,8 @@
   margin: auto;
   border-top-right-radius: 15px;
   border-top-left-radius: 15px;
+}
+.inner-screen{
+  background-color: white;
+  width:auto
 }
