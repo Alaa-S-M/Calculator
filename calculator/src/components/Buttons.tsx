@@ -1,5 +1,10 @@
 
-export default function Buttons() {
+interface ButtonsProps {
+    onClick: React.MouseEventHandler<HTMLDivElement>;
+}
+
+export default function Buttons({ onClick }: ButtonsProps) {
+
 
     return (
         <div className='grid'>
@@ -7,7 +12,10 @@ export default function Buttons() {
                 let gridItemClass: string = (/(C|%|\+\/-)/.test(button.label)) ? 'first-row-cell' :
                     (/(÷|x|\+|=|-)/.test(button.label)) ? 'last-col-cell' : '';
                 return (
-                    <div key={button.label} className={`${gridItemClass} grid-item ${button.width === 2 ? 'two-grid-cell' : ''}`}>
+                    <div
+                        key={button.label}
+                        className={`${gridItemClass} grid-item ${button.width === 2 ? 'two-grid-cell' : ''}`}
+                        onClick={onClick}>
                         {/* <Button label={button.label} /> */}
                         {button.label}
                     </div>

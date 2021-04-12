@@ -16,17 +16,16 @@ const Display = styled.div`
 
 function Calculator() {
     let [result, setResult] = useState(0);
-    function handleClick(e: MouseEvent) {
-        e.preventDefault();
-        // alert(event.currentTarget.tagName);
-        console.log(e.target)
-        return;
+    function getButtonValue(e: React.MouseEvent<HTMLDivElement, MouseEvent>) {
+        let value: unknown = (e.target as Element).innerHTML;
+        console.log((e.target as Element).innerHTML)
+        setResult(value as number);
     }
 
     return (
         <div className='container'>
             <Display>{result}</Display>
-            <Buttons />
+            <Buttons onClick={getButtonValue} />
         </div>
     );
 }
